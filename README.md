@@ -1,1 +1,1 @@
-LoftSchool. ÄÇ #1.
+LoftSchool. Ð”Ð— #1.
