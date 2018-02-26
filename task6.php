@@ -20,6 +20,7 @@ $opel = [
     'year' => '2013'
 ];
 
+$cars = [];
 $cars['bmw'] = $bmw;
 $cars['toyota'] = $toyota;
 $cars['opel'] = $opel;
