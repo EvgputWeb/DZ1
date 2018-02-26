@@ -1,4 +1,8 @@
 <?php
+ini_set('error_reporting', E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+
 $str = 'Мой дядя самых честных правил когда не в шутку занемог он уважать себя заставил';
 echo $str;
 
@@ -10,11 +14,19 @@ echo '</pre>';
 $k = count($strArr);
 $i = 0;
 while ($i < $k / 2) {
-    $tmp = $strArr[$i];
-    $strArr[$i] = $strArr[$k - $i];
-    $strArr[$k - $i] = $tmp;
+    $curIndex = $i;
+    $indexToChange = $k - $i - 1;
+    $tmp = $strArr[$curIndex];
+    $strArr[$curIndex] = $strArr[$indexToChange];
+    $strArr[$indexToChange] = $tmp;
     $i++;
 }
+
+echo 'Массив после перестановки:<br>';
+
+echo '<pre>';
+print_r($strArr);
+echo '</pre>';
 
 $newStr = implode('@', $strArr);
 echo $newStr;
