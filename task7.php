@@ -15,13 +15,13 @@
         }
 
         tr {
-            height: 40px;
+            height: 50px;
         }
 
         td {
             padding: 0;
             margin: 0;
-            width: 40px;
+            width: 50px;
             border: 1px solid black;
             vertical-align: middle;
         }
@@ -53,7 +53,15 @@
         echo '<tr>' . PHP_EOL;
         echo '<td class="zero-col">' . $i . '</td>';
         for ($j = 1; $j <= 9; $j++) {
-            echo '<td>' . $i * $j . '</td>';
+            if (($i % 2 == 0) && ($j % 2 == 0)) {
+                // Индекс строки и столбца - чётный
+                echo '<td>(' . $i * $j . ')</td>';
+            } elseif (($i % 2 == 1) && ($j % 2 == 1)) {
+                // Индекс строки и столбца - нечётный
+                echo '<td>[' . $i * $j . ']</td>';
+            } else {
+                echo '<td>' . $i * $j . '</td>';
+            }
         }
         echo '</tr>' . PHP_EOL;
     }
